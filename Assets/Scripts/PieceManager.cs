@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PieceManager : MonoBehaviour
@@ -9,6 +10,9 @@ public class PieceManager : MonoBehaviour
     private Team opponentTeam;
 
     private PieceVisualManager pieceVisualManager;
+
+    [SerializeField] private List<ChessPiece> player1Team = new List<ChessPiece>();
+    [SerializeField] private List<ChessPiece> player2Team = new List<ChessPiece>();
 
     private void Awake()
     {
@@ -25,7 +29,7 @@ public class PieceManager : MonoBehaviour
         SpawnTop();
     }
 
-    private void SpawnChessPiece(int x, int y, Sprite sprite, ChessPiece.ChessPieceType type)
+    private void SpawnChessPiece(int x, int y, Sprite sprite, ChessPiece.ChessPieceType type, List<ChessPiece> team)
     {
         Tile pieceParent = Board.Instance.GetTileAtPosition(x, y);
         ChessPiece G = Instantiate(chessPiecePrefab, pieceParent.transform.position, Quaternion.identity,
@@ -35,28 +39,29 @@ public class PieceManager : MonoBehaviour
         pieceParent.SetPieceOnTile(G);
         G.SetChessPieceType(type);
         G.name = type.ToString();
+        team.Add(G);
     }
 
     private void SpawnBottom()
     {
-        SpawnChessPiece(4, 0, pieceVisualManager.GetKingSprite,ChessPiece.ChessPieceType.King);
-        SpawnChessPiece(3, 0, pieceVisualManager.GetQueenSprite,ChessPiece.ChessPieceType.King);
+        SpawnChessPiece(4, 0, pieceVisualManager.GetKingSprite, ChessPiece.ChessPieceType.King, player1Team);
+        SpawnChessPiece(3, 0, pieceVisualManager.GetQueenSprite, ChessPiece.ChessPieceType.King, player1Team);
 
-        SpawnChessPiece(3, 0, pieceVisualManager.GetQueenSprite,ChessPiece.ChessPieceType.Queen);
-        SpawnChessPiece(3, 0, pieceVisualManager.GetQueenSprite,ChessPiece.ChessPieceType.Queen);
+        SpawnChessPiece(3, 0, pieceVisualManager.GetQueenSprite, ChessPiece.ChessPieceType.Queen, player1Team);
+        SpawnChessPiece(3, 0, pieceVisualManager.GetQueenSprite, ChessPiece.ChessPieceType.Queen, player1Team);
 
-        SpawnChessPiece(0, 0, pieceVisualManager.GetRookSprite,ChessPiece.ChessPieceType.Rook);
-        SpawnChessPiece(7, 0, pieceVisualManager.GetRookSprite,ChessPiece.ChessPieceType.Rook);
+        SpawnChessPiece(0, 0, pieceVisualManager.GetRookSprite, ChessPiece.ChessPieceType.Rook, player1Team);
+        SpawnChessPiece(7, 0, pieceVisualManager.GetRookSprite, ChessPiece.ChessPieceType.Rook, player1Team);
 
-        SpawnChessPiece(2, 0, pieceVisualManager.GetBishopSprite,ChessPiece.ChessPieceType.Bishop);
-        SpawnChessPiece(5, 0, pieceVisualManager.GetBishopSprite,ChessPiece.ChessPieceType.Bishop);
+        SpawnChessPiece(2, 0, pieceVisualManager.GetBishopSprite, ChessPiece.ChessPieceType.Bishop, player1Team);
+        SpawnChessPiece(5, 0, pieceVisualManager.GetBishopSprite, ChessPiece.ChessPieceType.Bishop, player1Team);
 
-        SpawnChessPiece(1, 0, pieceVisualManager.GetLeftKnightSprite,ChessPiece.ChessPieceType.Knight);
-        SpawnChessPiece(6, 0, pieceVisualManager.GetRightKnightSprite,ChessPiece.ChessPieceType.Knight);
+        SpawnChessPiece(1, 0, pieceVisualManager.GetLeftKnightSprite, ChessPiece.ChessPieceType.Knight, player1Team);
+        SpawnChessPiece(6, 0, pieceVisualManager.GetRightKnightSprite, ChessPiece.ChessPieceType.Knight, player1Team);
 
         for (int i = 0; i < 8; i++)
         {
-            SpawnChessPiece(i, 1, pieceVisualManager.GetPawnSprite,ChessPiece.ChessPieceType.Pawn);
+            SpawnChessPiece(i, 1, pieceVisualManager.GetPawnSprite, ChessPiece.ChessPieceType.Pawn, player1Team);
         }
     }
 
@@ -71,24 +76,24 @@ public class PieceManager : MonoBehaviour
             GameManager.Instance.SetIsWhite(true);
         }
 
-        SpawnChessPiece(4, 7, pieceVisualManager.GetKingSprite,ChessPiece.ChessPieceType.King);
-        SpawnChessPiece(3, 7, pieceVisualManager.GetQueenSprite,ChessPiece.ChessPieceType.King);
+        SpawnChessPiece(4, 7, pieceVisualManager.GetKingSprite, ChessPiece.ChessPieceType.King, player2Team);
+        SpawnChessPiece(3, 7, pieceVisualManager.GetQueenSprite, ChessPiece.ChessPieceType.King, player2Team);
 
-        SpawnChessPiece(3, 7, pieceVisualManager.GetQueenSprite,ChessPiece.ChessPieceType.Queen);
-        SpawnChessPiece(3, 7, pieceVisualManager.GetQueenSprite,ChessPiece.ChessPieceType.Queen);
+        SpawnChessPiece(3, 7, pieceVisualManager.GetQueenSprite, ChessPiece.ChessPieceType.Queen, player2Team);
+        SpawnChessPiece(3, 7, pieceVisualManager.GetQueenSprite, ChessPiece.ChessPieceType.Queen, player2Team);
 
-        SpawnChessPiece(0, 7, pieceVisualManager.GetRookSprite,ChessPiece.ChessPieceType.Rook);
-        SpawnChessPiece(7, 7, pieceVisualManager.GetRookSprite,ChessPiece.ChessPieceType.Rook);
+        SpawnChessPiece(0, 7, pieceVisualManager.GetRookSprite, ChessPiece.ChessPieceType.Rook, player2Team);
+        SpawnChessPiece(7, 7, pieceVisualManager.GetRookSprite, ChessPiece.ChessPieceType.Rook, player2Team);
 
-        SpawnChessPiece(2, 7, pieceVisualManager.GetBishopSprite,ChessPiece.ChessPieceType.Bishop);
-        SpawnChessPiece(5, 7, pieceVisualManager.GetBishopSprite,ChessPiece.ChessPieceType.Bishop);
+        SpawnChessPiece(2, 7, pieceVisualManager.GetBishopSprite, ChessPiece.ChessPieceType.Bishop, player2Team);
+        SpawnChessPiece(5, 7, pieceVisualManager.GetBishopSprite, ChessPiece.ChessPieceType.Bishop, player2Team);
 
-        SpawnChessPiece(1, 7, pieceVisualManager.GetLeftKnightSprite,ChessPiece.ChessPieceType.Knight);
-        SpawnChessPiece(6, 7, pieceVisualManager.GetRightKnightSprite,ChessPiece.ChessPieceType.Knight);
+        SpawnChessPiece(1, 7, pieceVisualManager.GetLeftKnightSprite, ChessPiece.ChessPieceType.Knight, player2Team);
+        SpawnChessPiece(6, 7, pieceVisualManager.GetRightKnightSprite, ChessPiece.ChessPieceType.Knight, player2Team);
 
         for (int i = 0; i < 8; i++)
         {
-            SpawnChessPiece(i, 6, pieceVisualManager.GetPawnSprite,ChessPiece.ChessPieceType.Pawn);
+            SpawnChessPiece(i, 6, pieceVisualManager.GetPawnSprite, ChessPiece.ChessPieceType.Pawn, player2Team);
         }
     }
 }
