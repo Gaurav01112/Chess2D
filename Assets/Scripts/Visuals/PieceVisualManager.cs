@@ -24,27 +24,14 @@ public class PieceVisualManager : MonoBehaviour
     [SerializeField] private Sprite blackLeftKnightSprite;
     [SerializeField] private Sprite blackRightKnightSprite;
 
-    public Sprite GetWhiteKingSprite => whiteKingSprite;
-    public Sprite GetWhiteQueenSprite => whiteQueenSprite;
-    public Sprite GetBlackKingSprite => blackKingSprite;
-    public Sprite GetBlackQueenSprite => blackQueenSprite;
-    public Sprite GetWhitePawnSprite => whitePawnSprite;
+    public Sprite GetKingSprite => GameManager.Instance.IsWhite ? whiteKingSprite : blackKingSprite;
+    public Sprite GetQueenSprite => GameManager.Instance.IsWhite ? whiteQueenSprite: blackQueenSprite;
+    public Sprite GetPawnSprite => GameManager.Instance.IsWhite ? whitePawnSprite: blackPawnSprite;
 
-    public Sprite GetBlackPawnSprite => blackPawnSprite;
+    public Sprite GetRookSprite => GameManager.Instance.IsWhite ? whiteRookSprite: blackRookSprite;
 
-    public Sprite GetWhiteRookSprite => whiteRookSprite;
+    public Sprite GetBishopSprite => GameManager.Instance.IsWhite ? whiteBishopSprite: blackBishopSprite;
 
-    public Sprite GetBlackRookSprite => blackRookSprite;
-
-    public Sprite GetWhiteBishopSprite => whiteBishopSprite;
-
-    public Sprite GetBlackBishopSprite => blackBishopSprite;
-
-    public Sprite GetWhiteLeftKnightSprite => whiteLeftKnightSprite;
-
-    public Sprite GetWhiteRightKnightSprite => whiteRightKnightSprite;
-
-    public Sprite GetBlackLeftKnightSprite => blackLeftKnightSprite;
-
-    public Sprite GetBlackRightKnightSprite => blackRightKnightSprite;
+    public Sprite GetLeftKnightSprite => GameManager.Instance.IsWhite ? whiteLeftKnightSprite: blackLeftKnightSprite;
+    public Sprite GetRightKnightSprite => GameManager.Instance.IsWhite ? whiteRightKnightSprite:blackRightKnightSprite;
 }

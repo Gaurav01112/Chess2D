@@ -1,22 +1,31 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
+    private bool isWhite = false;
+
+    private Team currentTeam;
     private Turn currentTurn;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public enum Turn
     {
-        None,
-        Bot,
         Player1,
-        Player2,
+        Player2
     }
 
-    public enum GameType
+    public Team GetTeam => currentTeam;
+
+    public Team SetTeam(Team team)
     {
-        None,
-        VsPlayer,
-        VsBot
+        return currentTeam = team;
     }
 
     public Turn GetTurn => currentTurn;
@@ -25,4 +34,17 @@ public class GameManager : MonoBehaviour
     {
         return currentTurn = turn;
     }
+
+    public bool IsWhite => isWhite;
+
+    public bool SetIsWhite(bool isWhite)
+    {
+        return this.isWhite = isWhite;
+    }
+}
+
+public enum Team
+{
+    TeamWhite = 0,
+    TeamBlack = 1
 }
