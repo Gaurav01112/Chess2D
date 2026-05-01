@@ -5,7 +5,7 @@ public class ChessPiece : MonoBehaviour
 {
     [SerializeField] private Vector2Int gridPosition;
     [SerializeField] private ChessPieceType pieceType;
-
+    [SerializeField] private Team team;
     public enum ChessPieceType
     {
         None,
@@ -28,5 +28,10 @@ public class ChessPiece : MonoBehaviour
     public ChessPieceType SetChessPieceType(ChessPieceType newType)
     {
         return pieceType = newType;
+    }
+
+    public Team SetTeam(Team newTeam)
+    {
+        return team = newTeam;
     }
 }

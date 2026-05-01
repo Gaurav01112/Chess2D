@@ -63,6 +63,11 @@ public class PieceManager : MonoBehaviour
         {
             SpawnChessPiece(i, 1, pieceVisualManager.GetPawnSprite, ChessPiece.ChessPieceType.Pawn, player1Team);
         }
+
+        foreach(var index in player1Team)
+        {
+            index.SetTeam(playerTeam);
+        }
     }
 
     private void SpawnTop()
@@ -94,6 +99,10 @@ public class PieceManager : MonoBehaviour
         for (int i = 0; i < 8; i++)
         {
             SpawnChessPiece(i, 6, pieceVisualManager.GetPawnSprite, ChessPiece.ChessPieceType.Pawn, player2Team);
+        }
+        foreach(var index in player2Team)
+        {
+            index.SetTeam(opponentTeam);
         }
     }
 }
