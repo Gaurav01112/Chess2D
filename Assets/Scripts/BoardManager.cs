@@ -64,15 +64,5 @@ public class BoardManager : MonoBehaviour
             oldTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
                 oldTile.GetComponent<TileVisuals>().GetStartColor();
         }
-        // if (selectedTile != null)
-        // {
-        //     isTileSelected = true;
-        //     selectedTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = selectedColor;
-        //     if (lastTile != null)
-        //     {
-        //         lastTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
-        //             lastTile.GetComponent<TileVisuals>().GetStartColor();
-        //     }
-        // }
     }
 }
