@@ -29,8 +29,27 @@ public class BoardManager : MonoBehaviour
             int y = Mathf.RoundToInt(mousePos.y);
 
             Tile clickedTile = Board.Instance.GetTileAtPosition(x, y);
+            
+            if (clickedTile == null)
+            {
+                return;
+            }
 
-            if (GameManager.Instance.GetTeam != clickedTile.GetChessPiece().GetTeam)
+            if (!clickedTile.isOccupied && selectedTile == null)
+            {
+                return;
+            }
+            if (!clickedTile.isOccupied && selectedPiece != null)
+            {
+                selectedTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
+                    selectedTile.GetComponent<TileVisuals>().GetStartColor();
+                selectedTile = null;
+                lastTile = null;
+                selectedPiece = null;
+                isTileSelected = false;
+                return;
+            }
+            if (GameManager.Instance.GetTeam != clickedTile.GetChessPiece().GetTeam )
             {
                 Debug.Log(GameManager.Instance.GetTeam + " : " + clickedTile.GetChessPiece().GetTeam);
 
