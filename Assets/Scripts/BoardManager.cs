@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 public class BoardManager : MonoBehaviour
@@ -28,10 +29,34 @@ public class BoardManager : MonoBehaviour
             int y = Mathf.RoundToInt(mousePos.y);
 
             Tile clickedTile = Board.Instance.GetTileAtPosition(x, y);
+
+            if (GameManager.Instance.GetTeam != clickedTile.GetChessPiece().GetTeam)
+            {
+                Debug.Log(GameManager.Instance.GetTeam + " : " + clickedTile.GetChessPiece().GetTeam);
+
+                if (selectedTile != null)
+                {
+                    selectedTile.GetComponent<TileVisuals>().GetStartColor();
+                    ResetTile(selectedTile);
+                    selectedPiece = null;
+                    selectedTile = null;
+                }
+
+                if (lastTile != null)
+                {
+                    lastTile.GetComponent<TileVisuals>().GetStartColor();
+                    lastTile = null;
+                }
+
+                isTileSelected = false;
+                return;
+            }
+
             if (!isTileSelected)
             {
                 selectedTile = clickedTile;
             }
+
             if (clickedTile.isOccupied)
             {
                 if (!isTileSelected)
@@ -45,7 +70,8 @@ public class BoardManager : MonoBehaviour
                 {
                     lastTile = selectedTile;
                     selectedTile = clickedTile;
-                    HighlightTile(selectedTile, lastTile);
+                    HighlightTile(selectedTile);
+                    ResetTile(lastTile);
                 }
             }
         }
@@ -56,13 +82,8 @@ public class BoardManager : MonoBehaviour
         newTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = selectedColor;
     }
 
-    private void HighlightTile(Tile newTile, Tile oldTile)
+    private void ResetTile(Tile newTile)
     {
-        if (selectedTile != null)
-        {
-            newTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = selectedColor;
-            oldTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
-                oldTile.GetComponent<TileVisuals>().GetStartColor();
-        }
+        newTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = newTile.transform.GetComponent<TileVisuals>().GetStartColor();
     }
 }

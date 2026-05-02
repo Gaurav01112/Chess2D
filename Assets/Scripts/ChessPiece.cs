@@ -29,7 +29,7 @@ public class ChessPiece : MonoBehaviour
     {
         return pieceType = newType;
     }
-
+    public Team GetTeam => team;
     public Team SetTeam(Team newTeam)
     {
         return team = newTeam;
