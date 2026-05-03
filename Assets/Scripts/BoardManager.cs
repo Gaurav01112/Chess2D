@@ -32,6 +32,13 @@ public class BoardManager : MonoBehaviour
             
             if (clickedTile == null)
             {
+                if (selectedTile != null)
+                {
+                    ResetTile(selectedTile);
+                    selectedPiece = null;
+                    selectedTile = null;
+                    
+                }
                 return;
             }
 
