@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PieceManager : MonoBehaviour
 {
-    [SerializeField] private ChessPiece chessPiecePrefab;
+    [SerializeField] private GameObject chessPiecePrefab;
 
     private Team playerTeam;
     private Team opponentTeam;
@@ -32,14 +33,43 @@ public class PieceManager : MonoBehaviour
     private void SpawnChessPiece(int x, int y, Sprite sprite, ChessPiece.ChessPieceType type, List<ChessPiece> team)
     {
         Tile pieceParent = Board.Instance.GetTileAtPosition(x, y);
-        ChessPiece G = Instantiate(chessPiecePrefab, pieceParent.transform.position, Quaternion.identity,
+        GameObject G = Instantiate(chessPiecePrefab.gameObject, pieceParent.transform.position, Quaternion.identity,
             pieceParent.transform);
-        G.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprite;
 
-        pieceParent.SetPieceOnTile(G);
-        G.SetChessPieceType(type);
+        ChessPiece pieceObj;
+
+
+        switch (type)
+        {
+            case ChessPiece.ChessPieceType.Pawn:
+                pieceObj = G.AddComponent<Pawn>();
+                break;
+            case ChessPiece.ChessPieceType.King:
+                pieceObj = G.AddComponent<King>();
+                break;
+            case ChessPiece.ChessPieceType.Queen:
+                pieceObj = G.AddComponent<Queen>();
+                break;
+            case ChessPiece.ChessPieceType.Bishop:
+                pieceObj = G.AddComponent<Bishop>();
+                break;
+            case ChessPiece.ChessPieceType.Knight:
+                pieceObj = G.AddComponent<Knight>();
+                break;
+            case ChessPiece.ChessPieceType.Rook:
+                pieceObj = G.AddComponent<Rook>();
+                break;
+            default:
+                pieceObj = G.AddComponent<Pawn>();
+                break;
+        }
+
+        G.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprite;
+        pieceParent.SetPieceOnTile(pieceObj);
+        pieceObj.SetTilePosition(new Vector2Int(x, y));
+        pieceObj.SetChessPieceType(type);
         G.name = type.ToString();
-        team.Add(G);
+        team.Add(pieceObj);
     }
 
     private void SpawnBottom()
@@ -64,7 +94,7 @@ public class PieceManager : MonoBehaviour
             SpawnChessPiece(i, 1, pieceVisualManager.GetPawnSprite, ChessPiece.ChessPieceType.Pawn, player1Team);
         }
 
-        foreach(var index in player1Team)
+        foreach (var index in player1Team)
         {
             index.SetTeam(playerTeam);
         }
@@ -100,7 +130,8 @@ public class PieceManager : MonoBehaviour
         {
             SpawnChessPiece(i, 6, pieceVisualManager.GetPawnSprite, ChessPiece.ChessPieceType.Pawn, player2Team);
         }
-        foreach(var index in player2Team)
+
+        foreach (var index in player2Team)
         {
             index.SetTeam(opponentTeam);
         }

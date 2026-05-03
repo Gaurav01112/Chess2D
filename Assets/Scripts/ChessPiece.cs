@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-public class ChessPiece : MonoBehaviour
+public abstract class ChessPiece : MonoBehaviour
 {
-    [SerializeField] private Vector2Int gridPosition;
+    [SerializeField] protected Vector2Int gridPosition;
     [SerializeField] private ChessPieceType pieceType;
     [SerializeField] private Team team;
     public enum ChessPieceType

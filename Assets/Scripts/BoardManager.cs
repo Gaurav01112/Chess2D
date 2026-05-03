@@ -37,7 +37,7 @@ public class BoardManager : MonoBehaviour
                     ResetTile(selectedTile);
                     selectedPiece = null;
                     selectedTile = null;
-                    
+                    isTileSelected = false;
                 }
                 return;
             }
@@ -91,6 +91,7 @@ public class BoardManager : MonoBehaviour
                     isTileSelected = true;
                     selectedPiece = clickedTile.GetChessPiece();
                     HighlightTile(selectedTile);
+                    PositionManager.Instance.SetPieceValidPosition(selectedPiece);
                 }
                 else
                 {

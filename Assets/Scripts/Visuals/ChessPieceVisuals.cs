@@ -4,12 +4,12 @@ using UnityEngine;
 public class ChessPieceVisuals : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    private Transform positionTransform;
+    //private Transform positionTransform;
 
     private void Awake()
     {
-        positionTransform = transform.GetChild(1);
-        positionTransform.gameObject.SetActive(false);
+        //positionTransform = transform.GetChild(1);
+        //positionTransform.gameObject.SetActive(false);
     }
     private void Start()
     {

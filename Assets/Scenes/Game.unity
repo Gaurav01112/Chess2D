@@ -149,7 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ccedba5587bea4987ddf381b2fbd45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PieceManager
-  chessPiecePrefab: {fileID: 4942469754111193845, guid: 32de13f4a2348554cbe94e494a160a59, type: 3}
+  chessPiecePrefab: {fileID: 3773451952837716224, guid: 32de13f4a2348554cbe94e494a160a59, type: 3}
+  player1Team: []
+  player2Team: []
 --- !u!4 &62462901
 Transform:
   m_ObjectHideFlags: 0
@@ -500,6 +502,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f144c83c5748abe47b5437db1b2d7b89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!1 &1430886727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1430886728}
+  - component: {fileID: 1430886729}
+  m_Layer: 0
+  m_Name: PositionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1430886728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430886727}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1430886729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430886727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a2ca5b76341f8742a6c1a008d4db5b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PositionManager
+  positionPrefab: {fileID: 2961224702350449335, guid: df714a9aecafe2f4787dc79827944460, type: 3}
 --- !u!1 &1947618741
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,3 +603,4 @@ SceneRoots:
   - {fileID: 62462901}
   - {fileID: 383005321}
   - {fileID: 1359319092}
+  - {fileID: 1430886728}
