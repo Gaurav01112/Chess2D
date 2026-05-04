@@ -6,12 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="9bebac8b-2f71-4be1-bf07-1666b86be047" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chess2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chess2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ChessPieces/Pawn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ChessPieces/Pawn.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ValidPosition.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ValidPosition.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChessPiece.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChessPiece.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PieceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PieceManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Visuals/ChessPieceVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Visuals/ChessPieceVisuals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Bishop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Bishop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/King.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/King.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Knight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Knight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Pawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Pawn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Queen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Queen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Rook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Rook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PositionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PositionManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@191c0d7e3b69/Editor/VisualScripting.Core/Utilities/EditorUnityObjectUtility.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -112,7 +121,11 @@
       <workItem from="1777544462484" duration="5053000" />
       <workItem from="1777553806499" duration="4046000" />
       <workItem from="1777618455383" duration="464000" />
-      <workItem from="1777799621941" duration="3218000" />
+      <workItem from="1777799621941" duration="5228000" />
+      <workItem from="1777816050031" duration="2187000" />
+      <workItem from="1777820320138" duration="1676000" />
+      <workItem from="1777877480863" duration="2714000" />
+      <workItem from="1777889606140" duration="3435000" />
     </task>
     <servers />
   </component>

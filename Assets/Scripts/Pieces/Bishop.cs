@@ -1,16 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Bishop : ChessPiece
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override List<Vector2Int> GetAvailableMoves()
     {
-        
-    }
+        List<Vector2Int> moves = new List<Vector2Int>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return moves;
     }
 }

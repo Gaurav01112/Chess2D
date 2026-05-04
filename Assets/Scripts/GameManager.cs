@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
 
     public enum Turn
     {
-        TeamWhite,
-        TeamBlack
+        Top,
+        Bottom
     }
 
     public Team GetTeam => currentTeam;

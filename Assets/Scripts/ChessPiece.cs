@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class ChessPiece : MonoBehaviour
@@ -16,6 +17,9 @@ public abstract class ChessPiece : MonoBehaviour
         Bishop,
         Rook,
     }
+
+    public abstract List<Vector2Int> GetAvailableMoves();
+    
     public Vector2Int GetGridPosition => gridPosition;
     
     public void SetTilePosition(Vector2Int position)

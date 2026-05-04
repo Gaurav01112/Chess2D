@@ -38,6 +38,7 @@ public class BoardManager : MonoBehaviour
                     selectedPiece = null;
                     selectedTile = null;
                     isTileSelected = false;
+                    PositionManager.Instance.HideAllDots();
                 }
                 return;
             }
@@ -48,6 +49,7 @@ public class BoardManager : MonoBehaviour
             }
             if (!clickedTile.isOccupied && selectedPiece != null)
             {
+                PositionManager.Instance.HideAllDots();
                 selectedTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
                     selectedTile.GetComponent<TileVisuals>().GetStartColor();
                 selectedTile = null;
@@ -87,7 +89,7 @@ public class BoardManager : MonoBehaviour
             {
                 if (!isTileSelected)
                 {
-                    //selectedTile = clickedTile;
+                    selectedTile = clickedTile;
                     isTileSelected = true;
                     selectedPiece = clickedTile.GetChessPiece();
                     HighlightTile(selectedTile);
@@ -97,8 +99,10 @@ public class BoardManager : MonoBehaviour
                 {
                     lastTile = selectedTile;
                     selectedTile = clickedTile;
+                    selectedPiece = clickedTile.GetChessPiece();
                     HighlightTile(selectedTile);
                     ResetTile(lastTile);
+                    PositionManager.Instance.SetPieceValidPosition(selectedPiece);
                 }
             }
         }
