@@ -10,7 +10,6 @@ public class BoardManager : MonoBehaviour
     private ChessPiece selectedPiece;
 
     private Tile selectedTile;
-    private Tile lastTile;
 
     private Color selectedColor = Color.coral;
 
@@ -39,15 +38,23 @@ public class BoardManager : MonoBehaviour
                 return;
             }
 
-            if (clickedTile != null && !clickedTile.isOccupied && selectedPiece != null)
+            if (selectedPiece != null && (!clickedTile.isOccupied ||
+                                          clickedTile.GetChessPiece().GetTeam != GameManager.Instance.GetTeam))
             {
                 Vector2Int targetPos = new Vector2Int(x, y);
 
                 if (selectedPiece.GetAvailableMoves().Contains(targetPos))
                 {
+                    if (clickedTile.isOccupied)
+                    {
+                        Destroy(clickedTile.GetChessPiece().gameObject);
+                    }
+
+                    selectedTile.SetPieceOnTile(null);
                     selectedPiece.MoveTo(targetPos);
-                    selectedPiece.transform.SetParent(selectedTile.transform);
-                    selectedTile.SetPieceOnTile(selectedPiece);
+
+                    selectedPiece.transform.SetParent(clickedTile.transform);
+                    clickedTile.SetPieceOnTile(selectedPiece);
                     GameManager.Instance.ChangeTurn();
                     DeselectEverything();
                     return;
@@ -58,8 +65,7 @@ public class BoardManager : MonoBehaviour
                     DeselectEverything();
                 }
             }
-
-            if (clickedTile != null)
+            else if (clickedTile != null)
             {
                 if (clickedTile.isOccupied)
                 {
@@ -75,9 +81,9 @@ public class BoardManager : MonoBehaviour
                         }
                         else
                         {
-                            lastTile = selectedTile;
-                            selectedTile = clickedTile;
-                            ResetTile(lastTile);
+                            ResetTile(selectedTile);
+                            
+                            //lastTile = selectedTile;
                             selectedTile = clickedTile;
                             HighlightTile(selectedTile);
                             selectedPiece = selectedTile.GetChessPiece();
@@ -115,7 +121,6 @@ public class BoardManager : MonoBehaviour
 
         selectedPiece = null;
         selectedTile = null;
-        lastTile = null;
         isTileSelected = false;
         PositionManager.Instance.HideAllDots();
     }
