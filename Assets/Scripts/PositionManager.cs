@@ -46,7 +46,6 @@ public class PositionManager : MonoBehaviour
                 dots[i].position = new Vector3(validMoves[i].x, validMoves[i].y, -1);
                 dots[i].gameObject.SetActive(true);
             }
-            Debug.Log("Jay Shree Ram");
         }
     }
 

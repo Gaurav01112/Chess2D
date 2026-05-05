@@ -23,10 +23,9 @@ public class Pawn : ChessPiece
                 }
             }
         }
-
         return moves;
     }
-
+    
     public bool IsBottomSide(bool isBottom)
     {
         return isBottomSide = isBottom;

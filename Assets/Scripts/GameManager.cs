@@ -8,31 +8,17 @@ public class GameManager : MonoBehaviour
     private bool isWhite = false;
 
     private Team currentTeam;
-    private Turn currentTurn;
 
     private void Awake()
     {
         Instance = this;
     }
 
-    public enum Turn
-    {
-        Top,
-        Bottom
-    }
-
     public Team GetTeam => currentTeam;
 
-    public Team SetTeam(Team team)
+    public void ChangeTurn()
     {
-        return currentTeam = team;
-    }
-
-    public Turn GetTurn => currentTurn;
-
-    public Turn SetTurn(Turn turn)
-    {
-        return currentTurn = turn;
+        currentTeam = (currentTeam == Team.TeamWhite) ? Team.TeamBlack : Team.TeamWhite;
     }
 
     public bool IsWhite => isWhite;

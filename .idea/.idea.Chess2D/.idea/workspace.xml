@@ -6,18 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9bebac8b-2f71-4be1-bf07-1666b86be047" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chess2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chess2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ValidPosition.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ValidPosition.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChessPiece.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChessPiece.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PieceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PieceManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Bishop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Bishop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/King.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/King.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Knight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Knight.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Pawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Pawn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Queen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Queen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Rook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Rook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PositionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PositionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +118,9 @@
       <workItem from="1777816050031" duration="2187000" />
       <workItem from="1777820320138" duration="1676000" />
       <workItem from="1777877480863" duration="2714000" />
-      <workItem from="1777889606140" duration="3435000" />
+      <workItem from="1777889606140" duration="5753000" />
+      <workItem from="1777970703975" duration="5627000" />
+      <workItem from="1777988599322" duration="1851000" />
     </task>
     <servers />
   </component>

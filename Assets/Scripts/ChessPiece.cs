@@ -19,6 +19,12 @@ public abstract class ChessPiece : MonoBehaviour
     }
 
     public abstract List<Vector2Int> GetAvailableMoves();
+
+    public virtual void MoveTo(Vector2Int targetPos)
+    {
+        gridPosition = targetPos;
+        transform.position = new Vector3(targetPos.x, targetPos.y, -1);
+    }
     
     public Vector2Int GetGridPosition => gridPosition;
     

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -25,84 +26,69 @@ public class BoardManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0;
+
             int x = Mathf.RoundToInt(mousePos.x);
             int y = Mathf.RoundToInt(mousePos.y);
 
             Tile clickedTile = Board.Instance.GetTileAtPosition(x, y);
-            
+
             if (clickedTile == null)
             {
-                if (selectedTile != null)
-                {
-                    ResetTile(selectedTile);
-                    selectedPiece = null;
-                    selectedTile = null;
-                    isTileSelected = false;
-                    PositionManager.Instance.HideAllDots();
-                }
+                DeselectEverything();
                 return;
             }
 
-            if (!clickedTile.isOccupied && selectedTile == null)
+            if (clickedTile != null && !clickedTile.isOccupied && selectedPiece != null)
             {
-                return;
-            }
-            if (!clickedTile.isOccupied && selectedPiece != null)
-            {
-                PositionManager.Instance.HideAllDots();
-                selectedTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
-                    selectedTile.GetComponent<TileVisuals>().GetStartColor();
-                selectedTile = null;
-                lastTile = null;
-                selectedPiece = null;
-                isTileSelected = false;
-                return;
-            }
-            if (GameManager.Instance.GetTeam != clickedTile.GetChessPiece().GetTeam )
-            {
-                Debug.Log(GameManager.Instance.GetTeam + " : " + clickedTile.GetChessPiece().GetTeam);
+                Vector2Int targetPos = new Vector2Int(x, y);
 
-                if (selectedTile != null)
+                if (selectedPiece.GetAvailableMoves().Contains(targetPos))
                 {
-                    selectedTile.GetComponent<TileVisuals>().GetStartColor();
-                    ResetTile(selectedTile);
-                    selectedPiece = null;
-                    selectedTile = null;
-                }
-
-                if (lastTile != null)
-                {
-                    lastTile.GetComponent<TileVisuals>().GetStartColor();
-                    lastTile = null;
-                }
-
-                isTileSelected = false;
-                return;
-            }
-
-            if (!isTileSelected)
-            {
-                selectedTile = clickedTile;
-            }
-
-            if (clickedTile.isOccupied)
-            {
-                if (!isTileSelected)
-                {
-                    selectedTile = clickedTile;
-                    isTileSelected = true;
-                    selectedPiece = clickedTile.GetChessPiece();
-                    HighlightTile(selectedTile);
-                    PositionManager.Instance.SetPieceValidPosition(selectedPiece);
+                    selectedPiece.MoveTo(targetPos);
+                    selectedPiece.transform.SetParent(selectedTile.transform);
+                    selectedTile.SetPieceOnTile(selectedPiece);
+                    GameManager.Instance.ChangeTurn();
+                    DeselectEverything();
+                    return;
                 }
                 else
                 {
-                    lastTile = selectedTile;
-                    selectedTile = clickedTile;
-                    selectedPiece = clickedTile.GetChessPiece();
-                    HighlightTile(selectedTile);
-                    ResetTile(lastTile);
-                    PositionManager.Instance.SetPieceValidPosition(selectedPiece);
+                    //Animate the clicked tile here for showing where it got deselected
+                    DeselectEverything();
+                }
+            }
+
+            if (clickedTile != null)
+            {
+                if (clickedTile.isOccupied)
+                {
+                    if (GameManager.Instance.GetTeam == clickedTile.GetChessPiece().GetTeam)
+                    {
+                        if (!isTileSelected)
+                        {
+                            selectedTile = clickedTile;
+                            selectedPiece = selectedTile.GetChessPiece();
+                            HighlightTile(selectedTile);
+                            isTileSelected = true;
+                            PositionManager.Instance.SetPieceValidPosition(selectedPiece);
+                        }
+                        else
+                        {
+                            lastTile = selectedTile;
+                            selectedTile = clickedTile;
+                            ResetTile(lastTile);
+                            selectedTile = clickedTile;
+                            HighlightTile(selectedTile);
+                            selectedPiece = selectedTile.GetChessPiece();
+                            PositionManager.Instance.SetPieceValidPosition(selectedPiece);
+                        }
+                    }
+                    else
+                    {
+                        //Add Killing Enemy Functions here
+                        DeselectEverything();
+                    }
                 }
             }
         }
@@ -115,6 +101,22 @@ public class BoardManager : MonoBehaviour
 
     private void ResetTile(Tile newTile)
     {
-        newTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = newTile.transform.GetComponent<TileVisuals>().GetStartColor();
+        newTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
+            newTile.transform.GetComponent<TileVisuals>().GetStartColor();
+        PositionManager.Instance.HideAllDots();
+    }
+
+    private void DeselectEverything()
+    {
+        if (selectedTile != null)
+        {
+            ResetTile(selectedTile);
+        }
+
+        selectedPiece = null;
+        selectedTile = null;
+        lastTile = null;
+        isTileSelected = false;
+        PositionManager.Instance.HideAllDots();
     }
 }
