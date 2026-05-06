@@ -16,12 +16,15 @@ public class Board : MonoBehaviour
 
     private Transform tileParent;
 
+    private List<Tile> allTiles = new List<Tile>();
+
     private void Awake()
     {
         Instance = this;
         tileParent = GetComponent<Transform>();
         CreateBoard();
     }
+
     private void CreateBoard()
     {
         for (int i = 0; i < ROW_MAX; i++)
@@ -44,6 +47,7 @@ public class Board : MonoBehaviour
 
                 board[j, i] = G;
                 G.SetTilePosition(new Vector2Int(j, i));
+                allTiles.Add(G);
             }
         }
     }
@@ -54,11 +58,12 @@ public class Board : MonoBehaviour
         {
             return board[x, y];
         }
+
         return null;
     }
 
-    public void PieceOnTile()
+    public List<Tile> GetAllTilesList()
     {
-        
+        return allTiles;
     }
 }

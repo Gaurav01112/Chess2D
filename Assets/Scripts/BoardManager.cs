@@ -88,11 +88,11 @@ public class BoardManager : MonoBehaviour
                             HighlightTile(selectedTile);
                             selectedPiece = selectedTile.GetChessPiece();
                             PositionManager.Instance.SetPieceValidPosition(selectedPiece);
+                            clickedTile = null;
                         }
                     }
                     else
                     {
-                        //Add Killing Enemy Functions here
                         DeselectEverything();
                     }
                 }
@@ -118,7 +118,6 @@ public class BoardManager : MonoBehaviour
         {
             ResetTile(selectedTile);
         }
-
         selectedPiece = null;
         selectedTile = null;
         isTileSelected = false;
