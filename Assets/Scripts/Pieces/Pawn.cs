@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.XR;
 using UnityEngine;
 
 public class Pawn : ChessPiece
@@ -23,9 +24,21 @@ public class Pawn : ChessPiece
                 }
             }
         }
+
+        int[] diagonalMoves = new[] { -1, 1 };
+        foreach (var xDiagPos in diagonalMoves)
+        {
+            Vector2Int targetPos = new Vector2Int(gridPosition.x + xDiagPos, gridPosition.y + direction);
+            if (CanCapture(targetPos))
+            {
+                moves.Add(targetPos);
+                Debug.Log("Diag: " + targetPos);
+            }
+        }
+
         return moves;
     }
-    
+
     public bool IsBottomSide(bool isBottom)
     {
         return isBottomSide = isBottom;
@@ -40,5 +53,16 @@ public class Pawn : ChessPiece
     {
         Tile t = Board.Instance.GetTileAtPosition(pos.x, pos.y);
         return (t != null && !t.isOccupied);
+    }
+
+    public bool CanCapture(Vector2Int pos)
+    {
+        Tile t = Board.Instance.GetTileAtPosition(pos.x, pos.y);
+        if (t != null)
+        {
+            return (t.isOccupied && t.GetChessPiece().GetTeam != this.GetTeam);
+        }
+
+        return false;
     }
 }
