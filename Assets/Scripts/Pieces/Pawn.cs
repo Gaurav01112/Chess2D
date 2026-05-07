@@ -32,7 +32,6 @@ public class Pawn : ChessPiece
             if (CanCapture(targetPos))
             {
                 moves.Add(targetPos);
-                Debug.Log("Diag: " + targetPos);
             }
         }
 

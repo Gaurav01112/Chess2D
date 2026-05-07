@@ -11,7 +11,7 @@ public class BoardManager : MonoBehaviour
 
     private Tile selectedTile;
 
-    private Color selectedColor = Color.coral;
+    private Color selectedColor = Color.blue;
 
     private bool isTileSelected = false;
 
