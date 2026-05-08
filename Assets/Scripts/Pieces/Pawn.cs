@@ -14,7 +14,6 @@ public class Pawn : ChessPiece
         if (IsTileEmpty(forwardOne))
         {
             moves.Add(forwardOne);
-
             if (IsOnStartingRank())
             {
                 Vector2Int forwardTwo = new Vector2Int(gridPosition.x, gridPosition.y + direction * 2);
@@ -25,10 +24,10 @@ public class Pawn : ChessPiece
             }
         }
 
-        int[] diagonalMoves = new[] { -1, 1 };
-        foreach (var xDiagPos in diagonalMoves)
+        int[] xDiagonal = new[] { -1, 1 };
+        foreach (int dir in xDiagonal)
         {
-            Vector2Int targetPos = new Vector2Int(gridPosition.x + xDiagPos, gridPosition.y + direction);
+            Vector2Int targetPos = new Vector2Int(gridPosition.x + dir, gridPosition.y + direction);
             if (CanCapture(targetPos))
             {
                 moves.Add(targetPos);
@@ -43,23 +42,23 @@ public class Pawn : ChessPiece
         return isBottomSide = isBottom;
     }
 
-    public bool IsOnStartingRank()
-    {
-        return (isBottomSide && gridPosition.y == 1) || (!isBottomSide && gridPosition.y == 6);
-    }
-
-    public bool IsTileEmpty(Vector2Int pos)
+    private bool IsTileEmpty(Vector2Int pos)
     {
         Tile t = Board.Instance.GetTileAtPosition(pos.x, pos.y);
         return (t != null && !t.isOccupied);
     }
 
-    public bool CanCapture(Vector2Int pos)
+    private bool IsOnStartingRank()
+    {
+        return (isBottomSide && gridPosition.y == 1) || (!isBottomSide && gridPosition.y == 6);
+    }
+
+    private bool CanCapture(Vector2Int pos)
     {
         Tile t = Board.Instance.GetTileAtPosition(pos.x, pos.y);
         if (t != null)
         {
-            return (t.isOccupied && t.GetChessPiece().GetTeam != this.GetTeam);
+            return t.isOccupied && t.GetChessPiece().GetTeam != this.GetTeam;
         }
 
         return false;
