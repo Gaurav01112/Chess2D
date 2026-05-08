@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9bebac8b-2f71-4be1-bf07-1666b86be047" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chess2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chess2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Bishop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Bishop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Knight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Knight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/Queen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/Queen.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +122,7 @@
       <workItem from="1778083840589" duration="3497000" />
       <workItem from="1778135468673" duration="8234000" />
       <workItem from="1778231954018" duration="7418000" />
-      <workItem from="1778243673604" duration="5962000" />
+      <workItem from="1778243673604" duration="6900000" />
     </task>
     <servers />
   </component>
