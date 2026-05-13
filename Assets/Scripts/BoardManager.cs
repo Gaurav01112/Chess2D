@@ -82,7 +82,7 @@ public class BoardManager : MonoBehaviour
                         else
                         {
                             ResetTile(selectedTile);
-                            
+
                             //lastTile = selectedTile;
                             selectedTile = clickedTile;
                             HighlightTile(selectedTile);
@@ -98,6 +98,85 @@ public class BoardManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void CheckForGameOver(Team teamInTurn)
+    {
+        if (HasAnyLegalMoves(teamInTurn))
+        {
+            if (IsKingInCheck(teamInTurn))
+            {
+                Debug.Log("CHECKMATE");
+            }
+            else
+            {
+                Debug.Log("STALEMATE");
+            }
+        }
+    }
+    public bool HasAnyLegalMoves(Team team)
+    {
+        List<ChessPiece> teamPieces = PieceManager.Instance.GetPiecesByTeam(team);
+        foreach (var piece in teamPieces)
+        {
+            if (GetLegalMoves(piece).Count > 0)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public List<Vector2Int> GetLegalMoves(ChessPiece piece)
+    {
+        List<Vector2Int> pseudoMoves = new List<Vector2Int>();
+        List<Vector2Int> legalMoves = new List<Vector2Int>();
+
+        Vector2Int originalPos = piece.GetGridPosition;
+        Tile originalTile = Board.Instance.GetTileAtPosition(originalPos.x, originalPos.y);
+
+        foreach (var targetPos in pseudoMoves)
+        {
+            Tile targetTile = Board.Instance.GetTileAtPosition(targetPos.x, targetPos.y);
+            ChessPiece capturedPiece = targetTile.GetChessPiece();
+            if (capturedPiece != null) PieceManager.Instance.GetAllPiecesList().Remove(capturedPiece);
+            targetTile.SetPieceOnTile(piece);
+            piece.SetTilePosition(targetPos);
+            originalTile.SetPieceOnTile(null);
+
+            if (!IsKingInCheck(piece.GetTeam))
+            {
+                legalMoves.Add(targetPos);
+            }
+
+            targetTile.SetPieceOnTile(capturedPiece);
+            capturedPiece.SetTilePosition(targetPos);
+            originalTile.SetPieceOnTile(piece);
+            piece.SetTilePosition(originalPos);
+
+            if (capturedPiece != null) PieceManager.Instance.GetAllPiecesList().Add(capturedPiece);
+        }
+
+        return legalMoves;
+    }
+
+    private bool IsKingInCheck(Team team)
+    {
+        ChessPiece king = PieceManager.Instance.GetKing(team);
+        if (king == null) return false;
+        Vector2Int kingPos = king.GetGridPosition;
+        Team opponentTeam = (team == Team.TeamWhite) ? Team.TeamBlack : Team.TeamWhite;
+        List<ChessPiece> opponentPieces = PieceManager.Instance.GetPiecesByTeam(opponentTeam);
+        foreach (ChessPiece enemy in opponentPieces)
+        {
+            if (enemy.GetAvailableMoves().Contains(kingPos))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void HighlightTile(Tile newTile)
@@ -118,6 +197,7 @@ public class BoardManager : MonoBehaviour
         {
             ResetTile(selectedTile);
         }
+
         selectedPiece = null;
         selectedTile = null;
         isTileSelected = false;

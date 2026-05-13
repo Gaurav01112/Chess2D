@@ -17,6 +17,8 @@ public class PieceManager : MonoBehaviour
     [SerializeField] private List<ChessPiece> player1Team = new List<ChessPiece>();
     [SerializeField] private List<ChessPiece> player2Team = new List<ChessPiece>();
 
+    [SerializeField] private List<ChessPiece> allPiecesList = new List<ChessPiece>();
+
     private void Awake()
     {
         Instance = this;
@@ -76,6 +78,8 @@ public class PieceManager : MonoBehaviour
         pieceObj.SetChessPieceType(type);
         G.name = type.ToString();
         team.Add(pieceObj);
+
+        allPiecesList.Add(pieceObj);
     }
 
     private void SpawnBottom()
@@ -165,5 +169,20 @@ public class PieceManager : MonoBehaviour
         {
             index.SetTeam(opponentTeam);
         }
+    }
+
+    public ChessPiece GetKing(Team team)
+    {
+        return allPiecesList.Find(p => p.GetTeam == team && p.GetPieceType == ChessPiece.ChessPieceType.King);
+    }
+
+    public List<ChessPiece> GetPiecesByTeam(Team team)
+    {
+        return allPiecesList.FindAll(p => p.GetTeam == team);
+    }
+
+    public List<ChessPiece> GetAllPiecesList()
+    {
+        return allPiecesList;
     }
 }

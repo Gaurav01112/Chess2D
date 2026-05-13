@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
         return this.isWhite = isWhite;
     }
 }
-
 public enum Team
 {
     TeamWhite = 0,

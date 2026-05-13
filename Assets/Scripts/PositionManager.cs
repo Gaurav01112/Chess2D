@@ -41,6 +41,12 @@ public class PositionManager : MonoBehaviour
 
         for (int i = 0; i < validMoves.Count; i++)
         {
+            Tile t = Board.Instance.GetTileAtPosition(validMoves[i].x, validMoves[i].y);
+            if (t.isOccupied)
+            {
+                dots[i].GetComponent<SpriteRenderer>().color = Color.red;
+            }
+
             if (i < dots.Count)
             {
                 dots[i].position = new Vector3(validMoves[i].x, validMoves[i].y, -1);
