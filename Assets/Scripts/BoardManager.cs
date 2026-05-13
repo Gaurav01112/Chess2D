@@ -55,6 +55,7 @@ public class BoardManager : MonoBehaviour
 
                     selectedPiece.transform.SetParent(clickedTile.transform);
                     clickedTile.SetPieceOnTile(selectedPiece);
+                    CheckForGameOver(selectedPiece.GetTeam);
                     GameManager.Instance.ChangeTurn();
                     DeselectEverything();
                     return;
@@ -76,8 +77,8 @@ public class BoardManager : MonoBehaviour
                             selectedTile = clickedTile;
                             selectedPiece = selectedTile.GetChessPiece();
                             HighlightTile(selectedTile);
-                            isTileSelected = true;
                             PositionManager.Instance.SetPieceValidPosition(selectedPiece);
+                            isTileSelected = true;
                         }
                         else
                         {
@@ -114,6 +115,7 @@ public class BoardManager : MonoBehaviour
             }
         }
     }
+
     public bool HasAnyLegalMoves(Team team)
     {
         List<ChessPiece> teamPieces = PieceManager.Instance.GetPiecesByTeam(team);
@@ -123,14 +125,13 @@ public class BoardManager : MonoBehaviour
             {
                 return true;
             }
-        }
-
+        }   
         return false;
     }
 
     public List<Vector2Int> GetLegalMoves(ChessPiece piece)
     {
-        List<Vector2Int> pseudoMoves = new List<Vector2Int>();
+        List<Vector2Int> pseudoMoves = piece.GetAvailableMoves();
         List<Vector2Int> legalMoves = new List<Vector2Int>();
 
         Vector2Int originalPos = piece.GetGridPosition;
@@ -151,7 +152,6 @@ public class BoardManager : MonoBehaviour
             }
 
             targetTile.SetPieceOnTile(capturedPiece);
-            capturedPiece.SetTilePosition(targetPos);
             originalTile.SetPieceOnTile(piece);
             piece.SetTilePosition(originalPos);
 

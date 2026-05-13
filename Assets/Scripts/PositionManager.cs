@@ -37,19 +37,22 @@ public class PositionManager : MonoBehaviour
     {
         HideAllDots();
 
-        List<Vector2Int> validMoves = piece.GetAvailableMoves();
-
+        List<Vector2Int> validMoves = BoardManager.Instance.GetLegalMoves(piece);
         for (int i = 0; i < validMoves.Count; i++)
         {
-            Tile t = Board.Instance.GetTileAtPosition(validMoves[i].x, validMoves[i].y);
-            if (t.isOccupied)
-            {
-                dots[i].GetComponent<SpriteRenderer>().color = Color.red;
-            }
-
             if (i < dots.Count)
             {
+                Tile t = Board.Instance.GetTileAtPosition(validMoves[i].x, validMoves[i].y);
                 dots[i].position = new Vector3(validMoves[i].x, validMoves[i].y, -1);
+                if (t.isOccupied)
+                {
+                    dots[i].GetComponent<SpriteRenderer>().color = Color.red;
+                }
+                else
+                {
+                    dots[i].GetComponent<SpriteRenderer>().color = Color.coral;
+                }
+
                 dots[i].gameObject.SetActive(true);
             }
         }
