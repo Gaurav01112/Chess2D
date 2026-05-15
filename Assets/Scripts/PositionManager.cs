@@ -46,11 +46,9 @@ public class PositionManager : MonoBehaviour
                 dots[i].position = new Vector3(validMoves[i].x, validMoves[i].y, -1);
                 if (t.isOccupied)
                 {
-                    dots[i].GetComponent<SpriteRenderer>().color = Color.red;
                 }
                 else
                 {
-                    dots[i].GetComponent<SpriteRenderer>().color = Color.coral;
                 }
 
                 dots[i].gameObject.SetActive(true);

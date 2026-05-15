@@ -42,11 +42,13 @@ public class BoardManager : MonoBehaviour
             {
                 Vector2Int targetPos = new Vector2Int(x, y);
 
-                if (selectedPiece.GetAvailableMoves().Contains(targetPos))
+                if (GetLegalMoves(selectedPiece).Contains(targetPos))
                 {
                     if (clickedTile.isOccupied)
                     {
-                        Destroy(clickedTile.GetChessPiece().gameObject);
+                        ChessPiece pieceToCapture = clickedTile.GetChessPiece();
+                        PieceManager.Instance.GetAllPiecesList().Remove(pieceToCapture);
+                        Destroy(pieceToCapture.gameObject);
                     }
 
                     selectedTile.SetPieceOnTile(null);
@@ -54,7 +56,8 @@ public class BoardManager : MonoBehaviour
 
                     selectedPiece.transform.SetParent(clickedTile.transform);
                     clickedTile.SetPieceOnTile(selectedPiece);
-                    CheckForGameOver(selectedPiece.GetTeam);
+                    Team nextTeam = (selectedPiece.GetTeam == Team.TeamWhite) ? Team.TeamBlack : Team.TeamWhite;
+                    CheckForGameOver(nextTeam);
                     GameManager.Instance.ChangeTurn();
                     DeselectEverything();
                     return;
@@ -102,7 +105,7 @@ public class BoardManager : MonoBehaviour
 
     public void CheckForGameOver(Team teamInTurn)
     {
-        if (HasAnyLegalMoves(teamInTurn))
+        if (!HasAnyLegalMoves(teamInTurn))
         {
             if (IsKingInCheck(teamInTurn))
             {
@@ -124,7 +127,8 @@ public class BoardManager : MonoBehaviour
             {
                 return true;
             }
-        }   
+        }
+
         return false;
     }
 
@@ -154,7 +158,11 @@ public class BoardManager : MonoBehaviour
             originalTile.SetPieceOnTile(piece);
             piece.SetTilePosition(originalPos);
 
-            if (capturedPiece != null) PieceManager.Instance.GetAllPiecesList().Add(capturedPiece);
+            if (capturedPiece != null)
+            {
+                capturedPiece.SetTilePosition(targetPos);
+                PieceManager.Instance.GetAllPiecesList().Add(capturedPiece);
+            }
         }
 
         return legalMoves;
