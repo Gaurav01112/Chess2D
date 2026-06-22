@@ -27,9 +27,24 @@ public class PieceManager : MonoBehaviour
 
     private void Start()
     {
-        playerTeam = (UnityEngine.Random.Range(0, 2) == 0) ? Team.TeamWhite : Team.TeamBlack;
-        opponentTeam = (playerTeam == Team.TeamWhite) ? Team.TeamBlack : Team.TeamWhite;
-        GameManager.Instance.SetIsWhite(playerTeam == Team.TeamWhite);
+        if (ChessManager.Instance.GetGameType == ChessManager.GameType.Random)
+        {
+            playerTeam = (UnityEngine.Random.Range(0, 2) == 0) ? Team.TeamWhite : Team.TeamBlack;
+            opponentTeam = (playerTeam == Team.TeamWhite) ? Team.TeamBlack : Team.TeamWhite;
+            GameManager.Instance.SetIsWhite(playerTeam == Team.TeamWhite);
+        }
+        else if (ChessManager.Instance.GetGameType == ChessManager.GameType.White)
+        {
+            playerTeam = Team.TeamWhite;
+            opponentTeam = Team.TeamBlack;
+            GameManager.Instance.SetIsWhite(true);
+        }
+        else if (ChessManager.Instance.GetGameType == ChessManager.GameType.Black)
+        {
+            playerTeam = Team.TeamBlack;
+            opponentTeam = Team.TeamWhite;
+            GameManager.Instance.SetIsWhite(false);
+        }
 
         SpawnBottom();
         SpawnTop();

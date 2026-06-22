@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoardManager : MonoBehaviour
 {
@@ -85,8 +86,7 @@ public class BoardManager : MonoBehaviour
                         else
                         {
                             ResetTile(selectedTile);
-
-                            //lastTile = selectedTile;
+                            
                             selectedTile = clickedTile;
                             HighlightTile(selectedTile);
                             selectedPiece = selectedTile.GetChessPiece();

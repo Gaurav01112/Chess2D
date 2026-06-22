@@ -7,7 +7,8 @@
     <list default="true" id="9bebac8b-2f71-4be1-bf07-1666b86be047" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chess2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chess2D/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PositionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PositionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PieceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PieceManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +131,9 @@
       <workItem from="1778677502238" duration="1328000" />
       <workItem from="1778828366236" duration="1867000" />
       <workItem from="1778853000238" duration="2377000" />
+      <workItem from="1781965040751" duration="1296000" />
+      <workItem from="1782009354800" duration="2317000" />
+      <workItem from="1782121901299" duration="1942000" />
     </task>
     <servers />
   </component>

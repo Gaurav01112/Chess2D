@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        
+    }
+
     public Team GetTeam => currentTeam;
 
     public void ChangeTurn()
