@@ -50,6 +50,34 @@ public class Board : MonoBehaviour
                 allTiles.Add(G);
             }
         }
+
+        SetBoardText();
+    }
+
+    private void SetBoardText()
+    {
+        for (int i = 0; i < allTiles.Count; i++)
+        {
+            var pos = allTiles[i].GetTilePosition();
+            var visuals = allTiles[i].GetComponent<TileVisuals>();
+
+            bool showLetter = pos.x >= 0 && pos.y <= 0;
+            bool showNum = pos.x <= 0 && pos.y >= 0;
+
+            visuals.GetLetterTextObj().SetActive(showLetter);
+            visuals.GetNumTextObj().SetActive(showNum);
+            if (showLetter)
+            {
+                int letterIndex = Mathf.RoundToInt(pos.x);
+                visuals.SetLetterTextObj(visuals.GetTileAlphabet()[letterIndex]);
+            }
+
+            if (showNum)
+            {
+                int numIndex = Mathf.RoundToInt(pos.y);
+                visuals.SetNumTextObj(visuals.GetTileNum()[numIndex]);
+            }
+        }
     }
 
     public Tile GetTileAtPosition(int x, int y)

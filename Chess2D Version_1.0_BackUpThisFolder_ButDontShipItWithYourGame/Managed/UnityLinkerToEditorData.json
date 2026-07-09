@@ -96,7 +96,9 @@
           },
           {
             "name": "AudioSource",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/Game.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -359,6 +361,7 @@
           {
             "name": "RectTransform",
             "scenes": [
+              "Assets/Scenes/Game.unity",
               "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,
@@ -1515,6 +1518,7 @@
           {
             "name": "Font",
             "scenes": [
+              "Assets/Scenes/Game.unity",
               "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,
@@ -1581,6 +1585,7 @@
           {
             "name": "Canvas",
             "scenes": [
+              "Assets/Scenes/Game.unity",
               "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,
@@ -1595,6 +1600,7 @@
           {
             "name": "CanvasRenderer",
             "scenes": [
+              "Assets/Scenes/Game.unity",
               "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,
