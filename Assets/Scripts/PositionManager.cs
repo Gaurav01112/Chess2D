@@ -7,10 +7,12 @@ public class PositionManager : MonoBehaviour
     public static PositionManager Instance;
     [SerializeField] private GameObject positionPrefab;
 
+    [SerializeField] private Sprite captureSprite;
+    
     private Transform validPositionTransform;
 
     private List<Transform> dots = new List<Transform>();
-
+    
     private void Awake()
     {
         Instance = this;
@@ -46,6 +48,8 @@ public class PositionManager : MonoBehaviour
                 dots[i].position = new Vector3(validMoves[i].x, validMoves[i].y, -1);
                 if (t.isOccupied)
                 {
+                    dots[i].GetComponent<SpriteRenderer>().sprite = captureSprite;
+                    dots[i].GetComponent<SpriteRenderer>().color = new Color(0,0,0,0.5f);
                 }
                 else
                 {

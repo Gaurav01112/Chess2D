@@ -10,7 +10,7 @@ Library: D:\Github Projects\Chess2D\Temp\BurstOutput\tempburstlibs\armeabi-v7a\l
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\Github Projects\Chess2D\Temp\Burst
---key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer
+--key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=D:\Github Projects\Chess2D\Library\Burst
 --output=D:\Github Projects\Chess2D\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
@@ -128,7 +128,7 @@ Library: D:\Github Projects\Chess2D\Temp\BurstOutput\tempburstlibs\armeabi-v7a\l
 --float-mode=Fast
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\Github Projects\Chess2D\Temp\Burst
---key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer
+--key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=D:\Github Projects\Chess2D\Library\Burst
 --output=D:\Github Projects\Chess2D\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
@@ -146,7 +146,7 @@ Library: D:\Github Projects\Chess2D\Temp\BurstOutput\tempburstlibs\armeabi-v7a\l
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\Github Projects\Chess2D\Temp\Burst
---key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer
+--key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=D:\Github Projects\Chess2D\Library\Burst
 --output=D:\Github Projects\Chess2D\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/

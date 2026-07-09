@@ -96,6 +96,7 @@ public class BoardManager : MonoBehaviour
                     }
                     else
                     {
+                        Debug.Log("Position Changed");
                         DeselectEverything();
                     }
                 }

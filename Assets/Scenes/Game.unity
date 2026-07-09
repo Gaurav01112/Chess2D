@@ -152,6 +152,7 @@ MonoBehaviour:
   chessPiecePrefab: {fileID: 3773451952837716224, guid: 32de13f4a2348554cbe94e494a160a59, type: 3}
   player1Team: []
   player2Team: []
+  allPiecesList: []
 --- !u!4 &62462901
 Transform:
   m_ObjectHideFlags: 0
@@ -179,20 +180,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aaba4f029f46bf4f94a2ba825e2c1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PieceVisualManager
-  whiteKingSprite: {fileID: 21300000, guid: cbd007949f67fd04f82728b98678690c, type: 3}
-  whiteQueenSprite: {fileID: 21300000, guid: 6cdb09f859e3fc54888e72ae0d02c0be, type: 3}
-  blackKingSprite: {fileID: 21300000, guid: af8bda8812123fb4992407ff15ef2fff, type: 3}
-  blackQueenSprite: {fileID: 21300000, guid: 95b33c48d27626b428b93cf308a1948c, type: 3}
-  whitePawnSprite: {fileID: 21300000, guid: ef17ba0d6c11707408f6912e814f1f42, type: 3}
-  blackPawnSprite: {fileID: 21300000, guid: 5c976183263521f42b1c908b2ad9a6bd, type: 3}
-  whiteRookSprite: {fileID: 21300000, guid: cb7aae77248032b4887bb15ccfca0e58, type: 3}
-  blackRookSprite: {fileID: 21300000, guid: 69879d96ef6c9e84ea4b8f4c471e9153, type: 3}
-  whiteBishopSprite: {fileID: 21300000, guid: dded22cb4a3060b488fca88adb108be2, type: 3}
-  blackBishopSprite: {fileID: 21300000, guid: c3e25a067494b42449a762feb2f6c48c, type: 3}
-  whiteLeftKnightSprite: {fileID: 21300000, guid: f4c90b972978c6343ac264ed90b35c34, type: 3}
-  whiteRightKnightSprite: {fileID: 21300000, guid: 9b85b2370f93b6d4896fc6a61ea12a61, type: 3}
-  blackLeftKnightSprite: {fileID: 21300000, guid: 4447fedbfa7288347aaf859434321724, type: 3}
-  blackRightKnightSprite: {fileID: 21300000, guid: b69b7c473bd5ead47a64b50ce1163fc9, type: 3}
+  whiteKingSprite: {fileID: 21300000, guid: 8245552de62083f47b9cea1f26f001d3, type: 3}
+  whiteQueenSprite: {fileID: 21300000, guid: b9c3a73ebccdbef4d8e273ee3094ac28, type: 3}
+  blackKingSprite: {fileID: 21300000, guid: 5bc1a0f7a8a86924c8811850752e9f11, type: 3}
+  blackQueenSprite: {fileID: 21300000, guid: 2931d14edb39ede489ec2c07dbf63ccb, type: 3}
+  whitePawnSprite: {fileID: 21300000, guid: d2060fe2b6b30424f8f0245df43a26ce, type: 3}
+  blackPawnSprite: {fileID: 21300000, guid: 9c206b9ef1520a44296bba95e7388fa0, type: 3}
+  whiteRookSprite: {fileID: 21300000, guid: 4ab21ac27a48ed543a666da54018654c, type: 3}
+  blackRookSprite: {fileID: 21300000, guid: 8a74163dd82de5d489c2eb439b4dc094, type: 3}
+  whiteBishopSprite: {fileID: 21300000, guid: 2971a299dfcedc544bcf6d4a127d1607, type: 3}
+  blackBishopSprite: {fileID: 21300000, guid: 1d5fd171e2ec6834eb1ab37b34814fdf, type: 3}
+  whiteLeftKnightSprite: {fileID: 21300000, guid: 3d767ea143db3c2488305dc40eca7e76, type: 3}
+  whiteRightKnightSprite: {fileID: 21300000, guid: 3d767ea143db3c2488305dc40eca7e76, type: 3}
+  blackLeftKnightSprite: {fileID: 21300000, guid: 9e8fc906bd80d174cbc9649e4a117cf7, type: 3}
+  blackRightKnightSprite: {fileID: 21300000, guid: 9e8fc906bd80d174cbc9649e4a117cf7, type: 3}
 --- !u!1 &383005319
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +250,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -343,7 +345,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -374,6 +376,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f01ce4abf4e714ba2d4c20aa3da2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChessCameraManager
+  boardWorldSize: 8
+  boardCenter: {x: 3.5, y: 3.5}
+  paddingPhone: 0
+  paddingTablet: 1.2
+  topUIPaddingPhone: 1.2
+  topUIPaddingTablet: 1.6
+  bottomUIPaddingPhone: 1.2
+  bottomUIPaddingTablet: 1.6
+  tabletDiagonalInchThreshold: 6.5
+  overrideDeviceCategory: 1
+  forcedCategory: 0
+  applySafeArea: 1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +573,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PositionManager
   positionPrefab: {fileID: 2961224702350449335, guid: df714a9aecafe2f4787dc79827944460, type: 3}
+  captureSprite: {fileID: 21300000, guid: e779a0d7c885ecc4292792160a7735eb, type: 3}
+--- !u!1 &1458798842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1458798843}
+  - component: {fileID: 1458798844}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1458798843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458798842}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1458798844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458798842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af43686c83ef72042a764a40c8b9108d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  captureClip: {fileID: 8300000, guid: b71aaa2fd9c8be84ab6d526c8ea57226, type: 3}
+  moveClip: {fileID: 8300000, guid: 8e084f4b6c028de4ab72cbfb870f18e3, type: 3}
 --- !u!1 &1947618741
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,3 +677,4 @@ SceneRoots:
   - {fileID: 383005321}
   - {fileID: 1359319092}
   - {fileID: 1430886728}
+  - {fileID: 1458798843}
