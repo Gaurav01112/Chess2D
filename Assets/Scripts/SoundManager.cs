@@ -16,9 +16,31 @@ public class SoundManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        BoardManager.OnPieceMove += BoardManagerOnPieceMove;
+        BoardManager.OnPieceCapture += BoardManagerOnPieceCapture;
+    }
+
+
+    private void OnDestroy()
+    {
+        BoardManager.OnPieceCapture -= BoardManagerOnPieceCapture;
+    }
+
     public void PlayClip(AudioClip clip)
     {
         audioSource.clip = clip;
         audioSource.PlayOneShot(clip);
+    }
+
+    private void BoardManagerOnPieceMove(object sender, EventArgs e)
+    {
+        PlayClip(moveClip);
+    }
+
+    private void BoardManagerOnPieceCapture(object sender, EventArgs e)
+    {
+        PlayClip(captureClip);
     }
 }

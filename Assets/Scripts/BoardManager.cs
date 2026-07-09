@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class BoardManager : MonoBehaviour
 {
+    public static event EventHandler OnPieceCapture;
+    public static event EventHandler OnPieceMove;
+    
     public static BoardManager Instance;
 
     private ChessPiece selectedPiece;
 
     private Tile selectedTile;
 
-    private Color selectedColor = Color.blue;
+    private Color selectedColor = Color.lightGreen;
 
     private bool isTileSelected = false;
 
@@ -50,8 +53,12 @@ public class BoardManager : MonoBehaviour
                         ChessPiece pieceToCapture = clickedTile.GetChessPiece();
                         PieceManager.Instance.GetAllPiecesList().Remove(pieceToCapture);
                         Destroy(pieceToCapture.gameObject);
+                        OnPieceCapture?.Invoke(this, EventArgs.Empty);
                     }
-
+                    else
+                    {
+                        OnPieceMove?.Invoke(this, EventArgs.Empty);
+                    }
                     selectedTile.SetPieceOnTile(null);
                     selectedPiece.MoveTo(targetPos);
 
@@ -96,7 +103,6 @@ public class BoardManager : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("Position Changed");
                         DeselectEverything();
                     }
                 }
