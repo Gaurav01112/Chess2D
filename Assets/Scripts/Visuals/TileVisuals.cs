@@ -9,6 +9,9 @@ public class TileVisuals : MonoBehaviour
     [SerializeField] private TextMeshProUGUI letterText;
     [SerializeField] private TextMeshProUGUI numText;
 
+    [SerializeField] private string currentLetter;
+    [SerializeField] private string currentNum;
+
     private string[] tileAlphabets = new[] { "a", "b", "c", "d", "e", "f", "g", "h" };
     private string[] tileNum = new[] { "1", "2", "3", "4", "5", "6", "7", "8" };
 
@@ -40,6 +43,26 @@ public class TileVisuals : MonoBehaviour
         return letterText;
     }
 
+    public string GetCurrentLetter()
+    {
+        return currentLetter;
+    }
+
+    public string SetCurrentLetter(string letter)
+    {
+        return currentLetter = letter;
+    }
+
+    public string GetCurrentNum()
+    {
+        return currentNum;
+    }
+
+    public string SetCurrentNum(string num)
+    {
+        return currentNum = num;
+    }
+
     public GameObject GetNumTextObj()
     {
         return numText.gameObject;
@@ -54,7 +77,9 @@ public class TileVisuals : MonoBehaviour
     public string[] GetTileAlphabet()
     {
         return tileAlphabets;
-    } public string[] GetTileNum()
+    }
+
+    public string[] GetTileNum()
     {
         return tileNum;
     }

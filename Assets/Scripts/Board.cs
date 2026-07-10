@@ -52,6 +52,7 @@ public class Board : MonoBehaviour
         }
 
         SetBoardText();
+        SetTileData();
     }
 
     private void SetBoardText()
@@ -77,6 +78,19 @@ public class Board : MonoBehaviour
                 int numIndex = Mathf.RoundToInt(pos.y);
                 visuals.SetNumTextObj(visuals.GetTileNum()[numIndex]);
             }
+        }
+    }
+
+    private void SetTileData()
+    {
+        for (int i = 0; i < allTiles.Count; i++)
+        {
+            var visuals = allTiles[i].GetComponent<TileVisuals>();
+            int col = i % 8;
+            int row = i / 8;
+
+            visuals.SetCurrentLetter(visuals.GetTileAlphabet()[col]);
+            visuals.SetCurrentNum(visuals.GetTileNum()[row]);
         }
     }
 
