@@ -16,15 +16,16 @@ public class SoundManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         BoardManager.OnPieceMove += BoardManagerOnPieceMove;
         BoardManager.OnPieceCapture += BoardManagerOnPieceCapture;
     }
 
 
-    private void OnDestroy()
+    private void OnDisable()
     {
+        BoardManager.OnPieceMove -= BoardManagerOnPieceMove;
         BoardManager.OnPieceCapture -= BoardManagerOnPieceCapture;
     }
 

@@ -23,6 +23,12 @@ public class BoardManager : MonoBehaviour
         Instance = this;
     }
 
+    private void OnDestroy()
+    {
+        OnPieceMove = null;
+        OnPieceCapture = null;
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -58,6 +64,8 @@ public class BoardManager : MonoBehaviour
                     else
                     {
                         OnPieceMove?.Invoke(this, EventArgs.Empty);
+                        TileVisuals click = clickedTile.GetComponent<TileVisuals>();
+                        Debug.Log(click.GetCurrentLetter()+click.GetCurrentNum());
                     }
                     selectedTile.SetPieceOnTile(null);
                     selectedPiece.MoveTo(targetPos);
