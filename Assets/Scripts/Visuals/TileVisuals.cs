@@ -6,6 +6,8 @@ public class TileVisuals : MonoBehaviour
 {
     public static TileVisuals Instance;
 
+    [SerializeField] private Transform highlightObj;
+    
     [SerializeField] private TextMeshProUGUI letterText;
     [SerializeField] private TextMeshProUGUI numText;
 
@@ -27,6 +29,10 @@ public class TileVisuals : MonoBehaviour
         startColor = transform.GetChild(0).GetComponent<SpriteRenderer>().color;
     }
 
+    private void Highlight()
+    {
+        
+    }
     public Color GetStartColor()
     {
         return startColor;
