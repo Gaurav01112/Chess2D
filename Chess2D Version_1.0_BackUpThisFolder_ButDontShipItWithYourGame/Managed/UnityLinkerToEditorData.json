@@ -446,7 +446,9 @@
           },
           {
             "name": "SpriteAtlas",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainMenu.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -1593,7 +1595,9 @@
           },
           {
             "name": "CanvasGroup",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainMenu.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },

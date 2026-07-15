@@ -1,20 +1,33 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Rook : ChessPiece
 {
+    public bool hasMoved = false; // Public, simple.
+    private Vector3 startPosition;
+
+    private void Start()
+    {
+        startPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        // Automatic check: If it left home, it moved.
+        if (!hasMoved && transform.position != startPosition)
+        {
+            hasMoved = true;
+        }
+    }
+
     public override List<Vector2Int> GetAvailableMoves()
     {
         List<Vector2Int> moves = new List<Vector2Int>();
-        Vector2Int[] direction = new[]
-        {
-            new Vector2Int(-1, 0),
-            new Vector2Int(1, 0),
-            new Vector2Int(0, 1),
-            new Vector2Int(0, -1),
+        Vector2Int[] directions = new[] {
+            new Vector2Int(-1, 0), new Vector2Int(1, 0), new Vector2Int(0, 1), new Vector2Int(0, -1)
         };
-        foreach (Vector2Int dir in direction)
+
+        foreach (Vector2Int dir in directions)
         {
             for (int i = 1; i < 8; i++)
             {
@@ -32,12 +45,10 @@ public class Rook : ChessPiece
                     {
                         moves.Add(targetPos);
                     }
-
                     break;
                 }
             }
         }
-
         return moves;
     }
 }

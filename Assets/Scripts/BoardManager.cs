@@ -91,7 +91,6 @@ public class BoardManager : MonoBehaviour
 
                     // Print coordinates to the console
                     TileVisuals click = clickedTile.GetComponent<TileVisuals>();
-                    Debug.Log(click.GetCurrentLetter() + click.GetCurrentNum());
 
                     // 3. Move the piece physically & logically
                     selectedTile.SetPieceOnTile(null);
@@ -130,7 +129,7 @@ public class BoardManager : MonoBehaviour
 
 
                             HighlightTile(selectedTile);
-                            Debug.Log("hey");
+
                         }
                         else
                         {
@@ -159,10 +158,12 @@ public class BoardManager : MonoBehaviour
             if (IsKingInCheck(teamInTurn))
             {
                 Debug.Log("CHECKMATE");
+                UIManager.Instance.gameOverUI.SetActive(true);
             }
             else
             {
                 Debug.Log("STALEMATE");
+                UIManager.Instance.gameOverUI.SetActive(true);
             }
         }
     }
@@ -188,7 +189,7 @@ public class BoardManager : MonoBehaviour
 
         Vector2Int originalPos = piece.GetGridPosition;
         Tile originalTile = Board.Instance.GetTileAtPosition(originalPos.x, originalPos.y);
-
+        
         foreach (var targetPos in pseudoMoves)
         {
             Tile targetTile = Board.Instance.GetTileAtPosition(targetPos.x, targetPos.y);

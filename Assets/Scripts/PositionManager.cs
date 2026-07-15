@@ -8,7 +8,7 @@ public class PositionManager : MonoBehaviour
     [SerializeField] private GameObject positionPrefab;
 
     [SerializeField] private Sprite captureSprite;
-    
+    [SerializeField] private Sprite startSprite;
     private Transform validPositionTransform;
 
     private List<Transform> dots = new List<Transform>();
@@ -53,6 +53,7 @@ public class PositionManager : MonoBehaviour
                 }
                 else
                 {
+                    dots[i].GetComponent<SpriteRenderer>().sprite = startSprite;
                 }
 
                 dots[i].gameObject.SetActive(true);
