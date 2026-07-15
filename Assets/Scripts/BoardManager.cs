@@ -7,12 +7,15 @@ public class BoardManager : MonoBehaviour
 {
     public static event EventHandler OnPieceCapture;
     public static event EventHandler OnPieceMove;
-    
+
     public static BoardManager Instance;
 
     private ChessPiece selectedPiece;
 
     private Tile selectedTile;
+
+    private Tile firstStartTile;
+    private Tile firstEndTile;
 
     private Color selectedColor = Color.lightGreen;
 
@@ -54,6 +57,22 @@ public class BoardManager : MonoBehaviour
 
                 if (GetLegalMoves(selectedPiece).Contains(targetPos))
                 {
+                    // 1. Reset the previous turn's highlights back to normal board colors
+                    if (firstStartTile != null)
+                    {
+                        Tile oldStart = firstStartTile;
+                        firstStartTile = null;
+                        ResetTile(oldStart);
+                    }
+
+                    if (firstEndTile != null)
+                    {
+                        Tile oldEnd = firstEndTile;
+                        firstEndTile = null;
+                        ResetTile(oldEnd);
+                    }
+
+                    // 2. Execute Captures vs. Normal Moves
                     if (clickedTile.isOccupied)
                     {
                         ChessPiece pieceToCapture = clickedTile.GetChessPiece();
@@ -64,23 +83,35 @@ public class BoardManager : MonoBehaviour
                     else
                     {
                         OnPieceMove?.Invoke(this, EventArgs.Empty);
-                        TileVisuals click = clickedTile.GetComponent<TileVisuals>();
-                        Debug.Log(click.GetCurrentLetter()+click.GetCurrentNum());
                     }
+
+                    // --- CRITICAL FIX: Save the new move coordinates ---
+                    firstStartTile = selectedTile; // Stores where we came from
+                    firstEndTile = clickedTile;   // Stores where we landed
+
+                    // Print coordinates to the console
+                    TileVisuals click = clickedTile.GetComponent<TileVisuals>();
+                    Debug.Log(click.GetCurrentLetter() + click.GetCurrentNum());
+
+                    // 3. Move the piece physically & logically
                     selectedTile.SetPieceOnTile(null);
                     selectedPiece.MoveTo(targetPos);
 
                     selectedPiece.transform.SetParent(clickedTile.transform);
                     clickedTile.SetPieceOnTile(selectedPiece);
+                    
                     Team nextTeam = (selectedPiece.GetTeam == Team.TeamWhite) ? Team.TeamBlack : Team.TeamWhite;
                     CheckForGameOver(nextTeam);
                     GameManager.Instance.ChangeTurn();
+                    
+                    // 4. Clean up selections and paint the new move highlights
                     DeselectEverything();
+                    HighlightTile(firstStartTile);
+                    HighlightTile(firstEndTile);
                     return;
                 }
                 else
                 {
-                    //Animate the clicked tile here for showing where it got deselected
                     DeselectEverything();
                 }
             }
@@ -94,14 +125,17 @@ public class BoardManager : MonoBehaviour
                         {
                             selectedTile = clickedTile;
                             selectedPiece = selectedTile.GetChessPiece();
-                            HighlightTile(selectedTile);
                             PositionManager.Instance.SetPieceValidPosition(selectedPiece);
                             isTileSelected = true;
+
+
+                            HighlightTile(selectedTile);
+                            Debug.Log("hey");
                         }
                         else
                         {
                             ResetTile(selectedTile);
-                            
+
                             selectedTile = clickedTile;
                             HighlightTile(selectedTile);
                             selectedPiece = selectedTile.GetChessPiece();
@@ -206,10 +240,19 @@ public class BoardManager : MonoBehaviour
         newTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color = selectedColor;
     }
 
-    private void ResetTile(Tile newTile)
+    private void ResetTile(Tile tileToReset)
     {
-        newTile.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
-            newTile.transform.GetComponent<TileVisuals>().GetStartColor();
+        if (tileToReset == null) return;
+        if (tileToReset == firstStartTile || tileToReset == firstEndTile)
+        {
+            tileToReset.transform.GetChild(0).GetComponent<SpriteRenderer>().color = selectedColor;
+        }
+        else
+        {
+            tileToReset.transform.GetChild(0).GetComponent<SpriteRenderer>().color =
+                tileToReset.transform.GetComponent<TileVisuals>().GetStartColor();
+        }
+
         PositionManager.Instance.HideAllDots();
     }
 

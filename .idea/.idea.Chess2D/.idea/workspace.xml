@@ -6,107 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9bebac8b-2f71-4be1-bf07-1666b86be047" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chess2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chess2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.XML.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.XML.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleEPOOutline.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleEPOOutline.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUIToolkit.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUIToolkit.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/readme.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/readme.txt.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tile/GreenTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tile/GreenTile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/arrow_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/arrow_left.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/arrow_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/arrow_right.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/checkmark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/checkmark.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/copy.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/cross.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/cross.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/double_arrow_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/double_arrow_left.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/hide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/hide.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/menu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/menu.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/minus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/minus.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/play.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/plus.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/send.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/send.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/share.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/share.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/view.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/view.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/zoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/Icons/zoom.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/demo_examples.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Demo/demo_examples.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Editor/FreeModifierEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Editor/FreeModifierEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Editor/ModifierUtility.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Editor/ModifierUtility.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Editor/ProceduralImageEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Editor/ProceduralImageEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Editor/ProceduralImageEditorUtility.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Editor/ProceduralImageEditorUtility.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Editor/procedural_image_inspector_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Editor/procedural_image_inspector_icon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Resources/Shaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Resources/Shaders/ProceduralImageRuntime.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Resources/Shaders/ProceduralImageRuntime.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Resources/procedural_ui_image_default_sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Resources/procedural_ui_image_default_sprite.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Attributes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Attributes/ModifierID.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Attributes/ModifierID.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/EmptySprite.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/EmptySprite.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Modifiers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Modifiers/CustomPremadeModifier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Modifiers/CustomPremadeModifier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Modifiers/FreeModifier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Modifiers/FreeModifier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Modifiers/OnlyOneEdgeModifier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Modifiers/OnlyOneEdgeModifier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Modifiers/RoundModifier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Modifiers/RoundModifier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Modifiers/UniformModifier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/Modifiers/UniformModifier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/ProceduralImage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/ProceduralImage.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/ProceduralImageModifier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/Scripts/ProceduralImageModifier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/doc_ProceduralUIImage.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralUIImage/doc_ProceduralUIImage.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Visuals/TileVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Visuals/TileVisuals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,6 +135,7 @@
       <workItem from="1783605755497" duration="1060000" />
       <workItem from="1783609276326" duration="10110000" />
       <workItem from="1783762110779" duration="3570000" />
+      <workItem from="1784091340955" duration="8874000" />
     </task>
     <servers />
   </component>
